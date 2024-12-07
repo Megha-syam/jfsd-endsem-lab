@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+   "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+   
+<hibernate-mapping> 
+<class name="com.klef.jfsd.exam.Vehicle">
+<id name="id"/>
+<property name="name"/>
+<property name="type"/>
+<property name="maxspeed"/>
+<property name="color"/>
+
+<union-subclass name="com.klef.jfsd.exam.Car" >
+<property name="numberofDoors"/>
+</union-subclass>
+
+<union-subclass name="com.klef.jfsd.exam.Truck">
+<property name="loadCapacity" />
+
+</union-subclass>
+</class>
+</hibernate-mapping>
